@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const Sequelize = require("sequelize");
 require("dotenv").config();
 
@@ -19,3 +20,6 @@ if (process.env.JAWSDB_URL) {
 }
 
 module.exports = sequelize;
+=======
+require('dotenv').config();
+>>>>>>> cbf85f596526aab5f5b9aa0e60d2f25b9b4ec078

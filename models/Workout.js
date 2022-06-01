@@ -11,10 +11,15 @@ Workout.init(
             primaryKey: true
         },
 
-        workout_category: {
+        workout_title: {
             type: DataTypes.STRING,
             allowNull: false,
         },
+
+        workout_content: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        }
     },
 
     {

@@ -15,8 +15,13 @@ Location.init(
         location_region: {
             type: DataTypes.STRING,
             allowNull: false,
-        }
-    }
+        },
+    },
+
+    {
+        sequelize,
+        modelName: 'Location'
+    },
 )
 
 module.exports = Location;

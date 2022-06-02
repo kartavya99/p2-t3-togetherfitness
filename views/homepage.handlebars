@@ -1,0 +1,32 @@
+  <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10 text-center">
+      <div class="section-title">
+      	<h2>Find a local work group</h2>
+        <p>Orci varius natoque penatibus et magnis dis turient montes nascetur ridiculus mus. Cras eleifend tellus sed congue ectetur velit turpis faucibus odio eget penatibus et magnis dis.</p>
+      </div>
+      <h5>Filter by workout</h5>
+      <div class="filter-btn">
+              <a href="#">Workout 1</a>
+              <a href="#">Workout 2</a>
+              <a href="#">Workout 3</a>
+              <a href="#">Workout 4</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 column">
+      {{#each workouts as |workout| }}
+        <div class="workout-list-container">
+         <div class="workout-list-content">
+           <h5>{{workout.type}}</h5>
+           <h3>{{workout.title}}</h3>
+            <p>
+              {{workout.description}}
+            </p>
+            <h6>{{workout.date}} <span>|</span> {{workout.time}} <span>|</span> {{workout.duration}}min</h6>
+            <div class="event-btn">
+               <a href="/workout/{{workout.id}}">VIEW WORKOUT</a>
+            </div>
+          </div>
+          <figure><img src="/img/map-placeholder.jpg" alt="Map"></figure>
+        </div>
+        {{/each}}

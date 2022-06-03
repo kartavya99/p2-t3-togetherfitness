@@ -1,32 +1,41 @@
-const { Workout } = require('../models');
+// const { Workout } = require("../models");
 
-const workoutData = [
-    {
-        workout_name: 'Run',
-    },
-    {
-        workout_name: 'Walk',
-    },
-    {
-        workout_name: 'Cycle',
-    },
-    {
-        workout_name: 'Weights',
-    },
-    {
-        workout_name: 'HIIT',
-    },
-    {
-        workout_name: 'Yoga',
-    },
-    {
-        workout_name: 'Pilates',
-    },
-    {
-        workout_name: 'All',
-    },
+// const workoutData =
+[
+  {
+    title: "Run",
+    user_id: 1,
+  },
+  {
+    title: "Walk",
+    user_id: 3,
+  },
+  {
+    title: "Cycle",
+    user_id: 3,
+  },
+  {
+    title: "Weights",
+    user_id: 1,
+  },
+  {
+    title: "HIIT",
+    user_id: 1,
+  },
+  {
+    title: "Yoga",
+    user_id: 2,
+  },
+  {
+    title: "Pilates",
+    user_id: 2,
+  },
+  {
+    title: "All",
+    user_id: 1,
+  },
 ];
 
-const seedWorkouts = () => Workout.bulkCreate(workoutData);
+// const seedWorkouts = () => Workout.bulkCreate(workoutData);
 
-module.exports = seedWorkouts;
+// module.exports = seedWorkouts;

@@ -1,23 +1,37 @@
-const seedWorkouts = require('./workout-seeds');
-const seedUsers = require('./user-seeds');
-const seedLocations = require('./location-seeds');
+const { User, Workout } = require("../models");
+// const seedLocations = require('./location-seeds');
 
-const sequelize = require('../config/connection');
+const sequelize = require("../config/connection");
 
-const seedAll = async () => {
-    await sequelize.sync({ force: true });
-    console.log('\n----- DATABASE SYNCED -----\n');
+const userData = require("./user-seeds");
+const workoutData = require("./workout-seeds");
 
-    await seedWorkouts();
-    console.log('\n----- WORKOUTS SEEDED -----\n');
+const seedDatabase = async () => {
+  await sequelize.sync({ force: true });
 
-    await seedUsers();
-    console.log('\n----- USERS SEEDED -----\n');
+  const seedUsers = () => User.bulkCreate(userData);
 
-    await seedLocations();
-    console.log('\n----- LOCATIONS SEEDED -----\n');
+  const seedWorkouts = () => Workout.bulkCreate(workoutData);
 
-    process.exit(0);
+  process.exit(0);
 };
 
-seedAll();
+seedDatabase();
+
+// const seedAll = async () => {
+//   await sequelize.sync({ force: true });
+//   console.log("\n----- DATABASE SYNCED -----\n");
+
+//   await seedWorkouts();
+//   console.log("\n----- WORKOUTS SEEDED -----\n");
+
+//   await seedUsers();
+//   console.log("\n----- USERS SEEDED -----\n");
+
+//   // await seedLocations();
+//   // console.log('\n----- LOCATIONS SEEDED -----\n');
+
+//   process.exit(0);
+// };
+
+// seedAll();

@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Location, Workout } = require("../models");
+const { Location, Workout, User } = require("../models");
 
 // needs to import withAuth for authentication
 
@@ -7,24 +7,18 @@ const { Location, Workout } = require("../models");
 router.get("/", async (req, res) => {
   try {
     // get all the workout with attributes
-    const workoutData = await Workout.findAll({
-      include: [
-        {
-          model: Workout,
-          // attribute:
-        },
-      ],
-    });
+    const workoutData = await Workout.findAll({});
 
     // Serialize data so the template can read it
-    const workout = workoutData.map((workdoutData) =>
+    const workout = workoutData.map((workoutData) =>
       workoutData.get({ plain: true })
     );
+    console.log(workout);
 
     res.render("homepage", {
-      workouts,
-      logged_in: req.session.logged_in,
-      username: req.session.username,
+      workout,
+      // logged_in: req.session.logged_in,
+      // username: req.session.username,
     });
   } catch (err) {
     res.status(500).json(err);

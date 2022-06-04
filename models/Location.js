@@ -20,10 +20,11 @@ Location.init(
 
   {
     sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
     modelName: "Location",
   }
 );
 
 module.exports = Location;
-
-// Incomplete.

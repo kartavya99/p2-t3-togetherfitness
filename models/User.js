@@ -31,36 +31,37 @@ User.init(
       },
     },
 
-    // password: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    // },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
 
-    // user_postcode: {
-    //     type: DataTypes.INTEGER,
-    //     allowNull: false,
-    // },
+    user_postcode: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
 
-    // user_gender: {
-    //     type: DataTypes.BOOLEAN,
-    //     allowNull: false,
-    //     defaultValue: true,
-    // },
+    user_gender: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true,
+    },
 
-    // user_age: {
-    //     type: DataTypes.INTEGER,
-    //     allowNull: false,
-    // },
+    user_age: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
 
-    // user_bio: {
-    //     type: DataTypes.STRING,
-    // },
+    user_bio: {
+        type: DataTypes.STRING,
+    },
   },
 
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
+    underscored: true,
     modelName: "user",
   }
 );

@@ -17,40 +17,40 @@ Workout.init(
       allowNull: false,
     },
 
-    // workout_type: {
-    //     type: DataTypes.STRING,
-    //     allowNull: false,
-    // },
+    workout_type: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
 
-    // workout_date: {
-    //     type: DataTypes.DATE,
-    //     allowNull: false,
-    // },
+    workout_date: {
+        type: DataTypes.DATE,
+        allowNull: false,
+    },
 
-    // workout_duration: {
-    //     type: DataTypes.INTEGER,
-    //     allowNull: false,
-    // },
+    workout_duration: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
 
-    // workout_size: {
-    //     type: DataTypes.INTEGER,
-    //     allowNull: false,
-    // },
+    workout_size: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
 
-    // workout_location: {
-    //     type: DataTypes.STRING,
-    //     allowNull: false,
-    // },
+    workout_location: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
 
-    // workout_address: {
-    //     type: DataTypes.STRING,
-    //     allowNull: false,
-    // },
+    workout_address: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
 
-    // workout_description: {
-    //     type: DataTypes.STRING,
-    //     allowNull: false,
-    // },
+    workout_description: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
 
     user_id: {
       type: DataTypes.INTEGER,
@@ -66,6 +66,7 @@ Workout.init(
     sequelize,
     timestamps: false,
     freezeTableName: true,
+    underscored: true,
     modelName: "workout",
   }
 );

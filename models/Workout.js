@@ -17,37 +17,37 @@ Workout.init(
       allowNull: false,
     },
 
-    workout_type: {
+    type: {
         type: DataTypes.STRING,
         allowNull: false,
     },
 
-    workout_date: {
+    date: {
         type: DataTypes.DATE,
         allowNull: false,
     },
 
-    workout_duration: {
+    duration: {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
 
-    workout_size: {
+    size: {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
 
-    workout_location: {
+    location: {
         type: DataTypes.STRING,
         allowNull: false,
     },
 
-    workout_address: {
+    address: {
         type: DataTypes.STRING,
         allowNull: false,
     },
 
-    workout_description: {
+    description: {
         type: DataTypes.STRING,
         allowNull: false,
     },

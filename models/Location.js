@@ -12,7 +12,7 @@ Location.init(
       autoIncrement: true,
     },
 
-    location_region: {
+    region: {
       type: DataTypes.STRING,
       allowNull: false,
     },

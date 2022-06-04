@@ -36,7 +36,7 @@ User.init(
       allowNull: false,
     },
 
-    user_postcode: {
+    postcode: {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
@@ -47,12 +47,12 @@ User.init(
         defaultValue: true,
     },
 
-    user_age: {
+    age: {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
 
-    user_bio: {
+    bio: {
         type: DataTypes.STRING,
     },
   },

@@ -2,30 +2,55 @@
     {
         "firstName": "Billy",
         "lastName": "Slater",
-        "email": "billyslater@gmail.com"
+        "email": "billyslater@gmail.com",
+        "password": "password1",
+        "postcode": 3000,
+        "gender": "Male",
+        "age": 38,
+        "bio": "Hello1"
     },
 
     {
         "firstName": "Michael",
         "lastName": "Scott",
-        "email": "michaelscott@gmail.com"
+        "email": "michaelscott@gmail.com",
+        "password": "password2",
+        "postcode": 3001,
+        "gender": "Male",
+        "age": 38,
+        "bio": "Hello2"
     },
 
     {
         "firstName": "Mike",
         "lastName": "Trout",
-        "email": "miketrout@gmail.com"
+        "email": "miketrout@gmail.com",
+        "password": "password3",
+        "postcode": 3002,
+        "gender": "Male",
+        "age": 38,
+        "bio": "Hello3"
     },
 
     {
         "firstName": "Tom",
         "lastName": "Brady",
-        "email": "tombrady@gmail.com"
+        "email": "tombrady@gmail.com",
+        "password": "password4",
+        "postcode": 3003,
+        "gender": "Male",
+        "age": 38,
+        "bio": "Hello4"
     },
 
     {
         "firstName": "Michael",
         "lastName": "Jordan",
-        "email": "michaeljordan@gmail.com"
+        "email": "michaeljordan@gmail.com",
+        "password": "password5",
+        "postcode": 3004,
+        "gender": "Male",
+        "age": 38,
+        "bio": "Hello5"
     }
 ]

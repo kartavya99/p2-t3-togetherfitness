@@ -25,6 +25,7 @@ Workout.init(
     date: {
         type: DataTypes.DATE,
         allowNull: false,
+        defaultValue: DataTypes.NOW,
     },
 
     duration: {

@@ -12,7 +12,7 @@ Location.init(
       autoIncrement: true,
     },
 
-    location_region: {
+    region: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -20,10 +20,11 @@ Location.init(
 
   {
     sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
     modelName: "Location",
   }
 );
 
 module.exports = Location;
-
-// Incomplete.

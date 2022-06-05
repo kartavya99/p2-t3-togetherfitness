@@ -7,7 +7,14 @@ const { Location, Workout, User } = require("../models");
 router.get("/", async (req, res) => {
   try {
     // get all the workout with attributes
-    const workoutData = await Workout.findAll({});
+    const workoutData = await Workout.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ["firstName", "lastName"],
+        },
+      ],
+    });
 
     // Serialize data so the template can read it
     const workout = workoutData.map((workoutData) =>
@@ -17,8 +24,8 @@ router.get("/", async (req, res) => {
 
     res.render("homepage", {
       workout,
-      // logged_in: req.session.logged_in,
-      // username: req.session.username,
+      logged_in: req.session.logged_in,
+      firstName: req.session.firstName,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -26,27 +33,27 @@ router.get("/", async (req, res) => {
 });
 
 // get workout by id
-router.get("/workout/id", async (req, res) => {
+router.get("/workout/:id", async (req, res) => {
   try {
+    console.log(req.body);
     const workoutData = await Workout.findByPk(req.params.id, {
-      include: [
-        {
-          model: Workout,
-          //attribute: []
-          include: { model: user, attributes: [] },
-        },
-      ],
+      include: {
+        model: User,
+        atrributes: ["id", "firstName", "lastName"],
+      },
     });
 
     //serialize data so the template can read it
     const workout = workoutData.get({ plain: true });
+    console.log(workout);
 
-    res.render("single-workout", {
-      workouts,
+    res.render("profile", {
+      workout,
       logged_in: req.session.logged_in,
-      username: req.session.username,
+      firstName: req.session.firstName,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });

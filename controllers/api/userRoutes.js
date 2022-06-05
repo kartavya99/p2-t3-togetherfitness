@@ -17,31 +17,33 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     const userData = await User.create({
-      username: req.body.username,
       email: req.body.email,
       password: req.body.password,
     });
 
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.session.username = userData.username;
       req.session.logged_in = true;
 
       res
         .status(201)
-        .json({ message: `Successfully created ${userData.username}` });
+        .json({ message: `Successfully created` });
     });
   } catch (err) {
+    console.log(err);
     res.status(400).json(err);
   }
 });
 
+
 // to check username, password and then allow user to log in
-router.get("/login", async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
+    console.log(req.body);
     const userData = await User.findOne({
       where: { email: req.body.email },
     });
+    console.log(userData);
 
     if (!userData) {
       res
@@ -51,6 +53,7 @@ router.get("/login", async (req, res) => {
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
+    console.log(userData);
 
     if (!validPassword) {
       res
@@ -61,7 +64,7 @@ router.get("/login", async (req, res) => {
 
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.session.username = userData.username;
+      // req.session.username = userData.username;
       req.session.logged_in = true;
 
       res.json({ user: userData, message: `You are now logged in!` });

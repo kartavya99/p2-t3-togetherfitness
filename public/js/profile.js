@@ -45,3 +45,8 @@ document
 document
   .querySelector('.project-list')
   .addEventListener('click', delButtonHandler);
+
+  document
+  .querySelector('.attending-list')
+  .addEventListener('click', delButtonHandler);
+

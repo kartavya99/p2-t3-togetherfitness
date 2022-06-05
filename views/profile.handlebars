@@ -1,4 +1,5 @@
- <div class="col-lg-8">
+<div class="row">
+    <div class="col-lg-8">
     <div class="col-12">
       <div class="section-title-sm">
         <h3>Workouts i'm joining</h3>
@@ -21,11 +22,12 @@
         </div>
          {{/each}}
         {{/if}}
+
       <div class="col-12">
          <div class="section-title-sm">
       	  <h3>Workouts i'm hosting</h3>
         </div>
-        </div>
+         </div>
      {{#if projects.length}}     
        {{#each projects as |project|}}
         <div class="my-list-container">
@@ -44,8 +46,7 @@
          {{/each}}
         {{/if}}
         </div>
-       </div>
-
+     
       <div class="col-lg-4">
               <div class="col-12">
       <div class="section-title-sm">
@@ -54,7 +55,7 @@
       </div>
           <div class="profile-info">
       		<div class="inner">
-               <h4>{{user.firstname user.lastname}}</h4>
+               {{!-- <h4>{{user.firstname user.lastname}}</h4>
                <small>Bio</small>
                <p>{{user.bio}}</p>
                <small>Email</small>
@@ -64,11 +65,12 @@
                 <small>Gender</small>
                <p>{{user.gender}}</p>
                 <small>Postcode</small>
-               <p>{{user.postcode}}</p>
+               <p>{{user.postcode}}</p> --}}
                <p><a href="#"> Edit Profile </a> </p>
               <p><a href="#"> Delete Profile </a> </p>
      		  </div>
         </div>
+     
       </div>
     </div>
 

@@ -15,21 +15,26 @@ router.get("/", async (req, res) => {
 
 //Post method to create a new user
 router.post("/", async (req, res) => {
+  console.log(req.body);
   try {
     const userData = await User.create({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
       email: req.body.email,
       password: req.body.password,
+      postcode: req.body.postcode,
+      age: req.body.age,
+      gender: req.body.gender,
+      bio: req.body.bio,
     });
 
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.session.username = userData.username;
       req.session.logged_in = true;
 
-      res
-        .status(201)
-        .json({ message: `Successfully created ${userData.username}` });
+      res.status(201).json({ message: `Successfully created` });
     });
+    console.log(userData);
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
@@ -44,25 +49,25 @@ router.post("/login", async (req, res) => {
       where: { email: req.body.email },
     });
     console.log(userData);
+
     if (!userData) {
-      res
-        .status(400)
-        .json({ message: `Incorrect email or password, please try again` });
+      res.status(400).json({ message: `Incorrect email, please try again` });
       return;
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
-    console.log(validPassword);
+    // console.log(userData);
+
     if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: `Incorrect email or password, please try again` });
+      console.log(!validPassword);
+      res.status(400).json({ message: `Incorrect password, please try again` });
       return;
     }
 
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.session.username = userData.username;
+      // req.session.firstName = userData.firstName;
+      // req.session.username = userData.username;
       req.session.logged_in = true;
 
       res.json({ user: userData, message: `You are now logged in!` });

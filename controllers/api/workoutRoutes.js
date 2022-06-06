@@ -4,38 +4,29 @@ const { User, Workout } = require("../../models");
 //import withAuth middleware for authentication
 
 // get all the workout
-// router.get("/", async (req, res) => {
-//   try {
-//     const workoutData = await Workout.findALL({
-//       attribute: ["id", "title"],
-//       include: [{ model: User, attribute: ["username"] }, { model: Location }],
-//     });
-//     res.status(200).json(workoutData);
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
-
 router.get("/", async (req, res) => {
+  console.log(req.body);
   try {
-    const userData = await Workout.findAll({
-      include: [{ model: User, attribute: ["firstName"] }],
+    const workoutData = await Workout.findAll({
+      attribute: ["id", "title", "type", "duration"],
+      include: [{ model: User, attribute: ["firstName", "lastName"] }],
     });
-    res.status(200).json(userData);
+    res.status(200).json(workoutData);
+    console.log(workoutData);
   } catch (err) {
-    res.status(500).json(err);
+    console.log(err);
+    res.status(400).json(err);
   }
 });
 
-
-
 // get workout by id
 router.get("/:id", async (req, res) => {
+  console.log(req.params);
   try {
-    const workoutData = await Workout.findByPk({
+    const workoutData = await Workout.findAll({
       where: { id: req.params.id },
-      // attribute: ["id", "title", "content"],
-      // include: [{ model: User, attributes: ["username"] }],
+      attribute: ["id", "title", "type"],
+      include: [{ model: User, attributes: ["firstName"] }],
     });
 
     if (!workoutData) {
@@ -46,6 +37,7 @@ router.get("/:id", async (req, res) => {
     }
     res.status(200).json(workoutData);
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -55,9 +47,16 @@ router.post("/", async (req, res) => {
   try {
     await Workout.create({
       title: req.body.title,
-      content: req.body.content,
-      user_id: req.body.user_id,
+      type: req.body.type,
+      date: req.body.date,
+      duration: req.body.duration,
+      size: req.body.size,
+      location: req.body.location,
+      address: req.body.address,
+      description: req.body.description,
+      user_id: req.session.user_id,
     });
+    res.status(200).send("Workout created");
   } catch (err) {
     res.status(500).json(err);
   }

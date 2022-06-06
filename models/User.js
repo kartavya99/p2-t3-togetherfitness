@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require("sequelize");
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
 
 class User extends Model {
@@ -45,23 +45,23 @@ User.init(
     },
 
     postcode: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
 
     user_gender: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-        defaultValue: true,
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true,
     },
 
     age: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
 
     bio: {
-        type: DataTypes.STRING,
+      type: DataTypes.STRING,
     },
   },
 
@@ -72,7 +72,10 @@ User.init(
         return newUserData;
       },
       beforeUpdate: async (updatedUserData) => {
-        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        updatedUserData.password = await bcrypt.hash(
+          updatedUserData.password,
+          10
+        );
         return updatedUserData;
       },
     },

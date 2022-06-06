@@ -47,7 +47,7 @@ router.get("/workout/:id", async (req, res) => {
     const workout = workoutData.get({ plain: true });
     console.log(workout);
 
-    res.render("workout", {
+   res.render("workout", {
       workout,
       logged_in: req.session.logged_in,
       firstName: req.session.firstName,
@@ -68,6 +68,7 @@ router.get("/host", (req, res) => {
 });
 
 // Temp host workout route
+
 router.get("/new", (req, res) => {
   res.render("new");
 });

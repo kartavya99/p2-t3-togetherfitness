@@ -5,16 +5,21 @@
       </div>
       </div>
       <div class="col-lg-8 col-md-10">
-      	<form class="row new-workout-form">
+      	<form class="row new-workout-form" autocomplete="off">
       		<div class="col-md-12 mb-3">
       			<input type="text"  id="new-workout-title" placeholder="Workout Title">
       		</div>
       		<div class="col-md-8 mb-3">
             <select class="form-select"  id="new-workout-type" aria-label="Default select example">
               <option selected>Work Out Type</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              <option value="Run">Run</option>
+              <option value="Walk">Walk</option>
+              <option value="Cycle">Cycle</option>
+              <option value="Weights">Weights</option>
+              <option value="HIIT">HIIT</option>
+              <option value="Yoga">Yoga</option>
+              <option value="Pilates">Pilates</option>
+              <option value="Other">Other</option>
             </select>
       		</div>
         <div class="col-md-4 mb-3">
@@ -24,25 +29,29 @@
       			<input type="text"  id="datepicker" placeholder="Date">
       		</div>
 		      <div class="col-md-4 mb-3">
-      			<input type="text"  id="new-workout-time" placeholder="Time">
+      			<input type="text"  id="new-workout-time" class="timepicker" placeholder="Time">
       		</div>
-
           <div class="col-md-4  mb-3">
             <select class="form-select"  id="new-workout-duration" aria-label="Default select example">
               <option selected>Duration (Minutes)</option>
-              <option value="1">15</option>
-              <option value="2">30</option>
-              <option value="3">45</option>
-              <option value="3">60</option>
-              <option value="3">90</option>
+              <option value="15">15</option>
+              <option value="30">30</option>
+              <option value="45">45</option>
+              <option value="60">60</option>
+              <option value="90">90</option>
             </select>
       		</div>
-
           <div class="col-md-12 mb-3">
-      		  <input type="text" id="new-workout-location" placeholder="Location Name">
+      		  <input type="text" id="location-find" placeholder="Start typing the location name or address">
       		</div>
           <div class="col-md-12 mb-3">
-      		  <input type="text"  id="new-workout-address" placeholder="Address">
+      		  <input type="text" id="location-name" placeholder="Venue Name">
+      		</div>
+          <div class="col-md-12 mb-3">
+      		  <input type="text" id="location-address" placeholder="Venue Address">
+            <input type="hidden" id="location-lat" name="location-lat" />
+            <input type="hidden" id="location-lng" name="location-lng" />
+            <input type="hidden" id="location-url" name="location-url" />
       		</div>
           <div class="col-md-12 mb-3">
 				  <textarea  id="new-workout-description" placeholder="Work out description. Please include any additional information your attendee's may need to know"></textarea>

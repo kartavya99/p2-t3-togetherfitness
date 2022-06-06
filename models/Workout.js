@@ -22,18 +22,23 @@ Workout.init(
         allowNull: false,
     },
 
+    size: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+  },
+
     date: {
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY,
         allowNull: false,
         defaultValue: DataTypes.NOW,
     },
 
-    duration: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
+   time: {
+      type: DataTypes.TIME,
+      allowNull: false
+  },
 
-    size: {
+    duration: {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
@@ -48,8 +53,23 @@ Workout.init(
         allowNull: false,
     },
 
+    lat: {
+      type: DataTypes.STRING,
+      allowNull: false,
+  },
+
+  lng: {
+      type: DataTypes.STRING,
+      allowNull: false,
+  },
+
+  url: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+
     description: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT, 
         allowNull: false,
     },
 

@@ -1,97 +1,67 @@
 [
     {
-        "title": "Run",
-        "user_id": "1",
+        "title": "Run Wattle Park ",
         "type": "Run",
-        "date": "2000-01-01",
-        "duration": 60,
-        "size": 4,
-        "location": "Melbourne",
-        "address": "123 Here Drive, Melbourne",
-        "description": "5km run"
+        "date": "2022-06-23",
+        "time": "08:00",
+        "duration": 30,
+        "size": 12,
+        "location": "Wattle Park Cricket Ground",
+        "address": "Riversdale Rd, Burwood VIC 3125, Australia",
+        "lng": "-37.8383693",
+        "lat": "145.1056319",
+        "url": "https://maps.google.com/?cid=1082084875369070240",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla urna, scelerisque ut aliquet nec, laoreet sed nibh. Maecenas quis mauris scelerisque erat varius pharetra. Sed felis ante, rutrum sed rutrum vel, elementum id risus. Donec non dignissim augue, in commodo metus. Curabitur consectetur sit amet diam sit amet euismod.",
+        "user_id": "1"
     },
 
     {
-        "title": "Walk",
-        "user_id": "1",
-        "type": "Run",
-        "date": "2000-01-01",
+        "title": "Cycle Melbourne Cricket Ground",
+        "type": "Cycle",
+        "date": "2022-06-22",
+        "time": "12:00",
         "duration": 60,
         "size": 4,
-        "location": "Melbourne",
-        "address": "123 Here Drive, Melbourne",
-        "description": "5km run"
+        "location": "Melbourne Cricket Ground",
+        "address": "Brunton Ave, Richmond VIC 3002, Australia",
+        "lng": "-37.8199669",
+        "lat": "144.9834493",
+        "url": "https://maps.google.com/?cid=7158295506658046713",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla urna, scelerisque ut aliquet nec, laoreet sed nibh. Maecenas quis mauris scelerisque erat varius pharetra. Sed felis ante, rutrum sed rutrum vel, elementum id risus. Donec non dignissim augue, in commodo metus. Curabitur consectetur sit amet diam sit amet euismod.",
+        "user_id": "3"
+    },
+
+
+    {
+        "title": "HIIT Workout at the beach",
+        "type": "HIIT",
+        "date": "2022-06-22",
+        "time": "12:00",
+        "duration": 60,
+        "size": 4,
+        "location": "St Kilda beach",
+        "address": "St Kilda beach, Victoria, Australia",
+        "lng": "-37.8678765",
+        "lat": "144.9740049",
+        "url": "https://maps.google.com/?cid=10484059914022525914",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla urna, scelerisque ut aliquet nec, laoreet sed nibh. Maecenas quis mauris scelerisque erat varius pharetra. Sed felis ante, rutrum sed rutrum vel, elementum id risus. Donec non dignissim augue, in commodo metus. Curabitur consectetur sit amet diam sit amet euismod.",
+        "user_id": "2"
     },
 
     {
-        "title": "Cycle",
-        "user_id": "2",
+        "title": "Run the G",
         "type": "Run",
-        "date": "2000-01-01",
+        "date": "2022-06-22",
+        "time": "12:00",
         "duration": 60,
         "size": 4,
-        "location": "Melbourne",
-        "address": "123 Here Drive, Melbourne",
-        "description": "5km run"
-    },
-
-    {
-        "title": "Weights",
-        "user_id": "2",
-        "type": "Run",
-        "date": "2000-01-01",
-        "duration": 60,
-        "size": 4,
-        "location": "Melbourne",
-        "address": "123 Here Drive, Melbourne",
-        "description": "5km run"
-    },
-
-    {
-        "title": "HIIT",
-        "user_id": "2",
-        "type": "Run",
-        "date": "2000-01-01",
-        "duration": 60,
-        "size": 4,
-        "location": "Melbourne",
-        "address": "123 Here Drive, Melbourne",
-        "description": "5km run"
-    },
-
-    {
-        "title": "Yoga",
-        "user_id": "3",
-        "type": "Run",
-        "date": "2000-01-01",
-        "duration": 60,
-        "size": 4,
-        "location": "Melbourne",
-        "address": "123 Here Drive, Melbourne",
-        "description": "5km run"
-    },
-
-    {
-        "title": "Pilates",
-        "user_id": "3",
-        "type": "Run",
-        "date": "2000-01-01",
-        "duration": 60,
-        "size": 4,
-        "location": "Melbourne",
-        "address": "123 Here Drive, Melbourne",
-        "description": "5km run"
-    },
-
-    {
-        "title": "All",
-        "user_id": "3",
-        "type": "Run",
-        "date": "2000-01-01",
-        "duration": 60,
-        "size": 4,
-        "location": "Melbourne",
-        "address": "123 Here Drive, Melbourne",
-        "description": "5km run"
+        "location": "Melbourne Cricket Ground",
+        "address": "Brunton Ave, Richmond VIC 3002, Australia",
+        "lng": "-37.8199669",
+        "lat": "144.9834493",
+        "url": "https://maps.google.com/?cid=7158295506658046713",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla urna, scelerisque ut aliquet nec, laoreet sed nibh. Maecenas quis mauris scelerisque erat varius pharetra. Sed felis ante, rutrum sed rutrum vel, elementum id risus. Donec non dignissim augue, in commodo metus. Curabitur consectetur sit amet diam sit amet euismod.",
+        "user_id": "1"
     }
+
 ]

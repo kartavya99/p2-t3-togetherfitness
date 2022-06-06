@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
     const workout = workoutData.map((workoutData) =>
       workoutData.get({ plain: true })
     );
-    console.log(workout);
+    console.log(workoutData);
 
     res.render("homepage", {
       workout,
@@ -26,12 +26,12 @@ router.get("/", async (req, res) => {
 });
 
 // get workout by id
-router.get("/workout/id", async (req, res) => {
+router.get("/workout/:id", async (req, res) => {
   try {
     const workoutData = await Workout.findByPk(req.params.id, {
       include: [
         {
-          model: Workout,
+          model: User,
           //attribute: []
           include: { model: user, attributes: [] },
         },
@@ -41,10 +41,10 @@ router.get("/workout/id", async (req, res) => {
     //serialize data so the template can read it
     const workout = workoutData.get({ plain: true });
 
-    res.render("single-workout", {
+    res.render("workout", {
       workouts,
-      logged_in: req.session.logged_in,
-      username: req.session.username,
+      // logged_in: req.session.logged_in,
+      // username: req.session.username,
     });
   } catch (err) {
     res.status(500).json(err);

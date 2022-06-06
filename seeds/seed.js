@@ -14,6 +14,18 @@ const seedDatabase = async () => {
     const workouts = await Workout.bulkCreate(workoutData);
     console.log('\n----- WORKOUTS SEEDED -----\n');
 
+    // const users = await User.bulkCreate(userData, {
+    //     individualHooks: true,
+    //     returning: true,
+    //   });
+    //    console.log(userData);
+    //   for (const workout of workoutData) {
+    //     await Workout.create({
+    //       ...workout,
+    //       user_id: users[Math.floor(Math.random() * users.length)].id,
+    //     });
+    //   }
+
     process.exit(0);
 };
 

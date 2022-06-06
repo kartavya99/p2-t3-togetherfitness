@@ -1,28 +1,41 @@
 const router = require("express").Router();
 const { userInfo } = require("os");
-const { User, workout } = require("../../models");
+const { User, Workout } = require("../../models");
 //import withAuth middleware for authentication
 
 // get all the workout
+// router.get("/", async (req, res) => {
+//   try {
+//     const workoutData = await Workout.findALL({
+//       attribute: ["id", "title"],
+//       include: [{ model: User, attribute: ["username"] }, { model: Location }],
+//     });
+//     res.status(200).json(workoutData);
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
+
 router.get("/", async (req, res) => {
   try {
-    const workoutData = await workout.findALL({
-      attribute: ["id", "title"],
-      include: [{ model: User, attribute: ["username"] }, { model: Location }],
+    const userData = await Workout.findAll({
+      include: [{ model: User, attribute: ["firstName"] }],
     });
-    res.status(200).json(workoutData);
+    res.status(200).json(userData);
   } catch (err) {
-    res.status(400).json(err);
+    res.status(500).json(err);
   }
 });
+
+
 
 // get workout by id
 router.get("/:id", async (req, res) => {
   try {
-    const workoutData = await workout.findByPk({
+    const workoutData = await Workout.findByPk({
       where: { id: req.params.id },
-      attribute: ["id", "title", "content"],
-      include: [{ model: User, attributes: ["username"] }],
+      // attribute: ["id", "title", "content"],
+      // include: [{ model: User, attributes: ["username"] }],
     });
 
     if (!workoutData) {
@@ -40,7 +53,7 @@ router.get("/:id", async (req, res) => {
 // create workout
 router.post("/", async (req, res) => {
   try {
-    await workout.create({
+    await Workout.create({
       title: req.body.title,
       content: req.body.content,
       user_id: req.body.user_id,
@@ -53,7 +66,7 @@ router.post("/", async (req, res) => {
 // delete workout
 router.delete("/:id", async (req, res) => {
   try {
-    const workoutData = await workout.destroy({
+    const workoutData = await Workout.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,

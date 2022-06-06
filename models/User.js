@@ -49,10 +49,9 @@ User.init(
         allowNull: false,
     },
 
-    user_gender: {
-        type: DataTypes.BOOLEAN,
+    gender: {
+        type: DataTypes.STRING,
         allowNull: false,
-        defaultValue: true,
     },
 
     age: {

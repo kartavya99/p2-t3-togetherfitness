@@ -1,77 +1,86 @@
 <div class="row">
-    <div class="col-lg-8">
+  <div class="col-lg-8">
     <div class="col-12">
       <div class="section-title-sm">
         <h3>Workouts i'm joining</h3>
       </div>
     </div>
-     {{#if projects.length}}      
-       {{#each projects as |project|}}
-       <div class="my-list-container">
-         <div class="my-list-content">
-           <h5>{{workout.type}}</h5>
-           <h3>{{workout.title}}</h3>
-            <p>
-              {{workout.description}}
-            </p>
-            <h6>{{workout.date}} <span>|</span> {{workout.time}} <span>|</span> {{workout.duration}}min</h6>
-           <div class="event-btn">
-               <a href="/workout/{{workout.id}}">VIEW WORKOUT</a>
-            </div>
-          </div>
-        </div>
-         {{/each}}
-        {{/if}}
-
-      <div class="col-12">
-         <div class="section-title-sm">
-      	  <h3>Workouts i'm hosting</h3>
-        </div>
-         </div>
-     {{#if projects.length}}     
-       {{#each projects as |project|}}
+    {{#if workouts.length}}
+      {{#each workouts as |workout|}}
         <div class="my-list-container">
-         <div class="my-list-content">
-           <h5>{{workout.type}}</h5>
-           <h3>{{workout.title}}</h3>
+          <div class="my-list-content">
+            <h5>{{workout.type}}</h5>
+            <h3>{{workout.title}}</h3>
             <p>
               {{workout.description}}
             </p>
-            <h6>{{workout.date}} <span>|</span> {{workout.time}} <span>|</span> {{workout.duration}}min</h6>
-           <div class="event-btn">
-               <a href="/workout/{{workout.id}}">VIEW WORKOUT</a>
+            <h6>{{workout.date}}
+              <span>|</span>
+              {{workout.time}}
+              <span>|</span>
+              {{workout.duration}}min</h6>
+            <div class="event-btn">
+              <a href="/workout/{{workout.id}}">VIEW WORKOUT</a>
             </div>
           </div>
         </div>
-         {{/each}}
-        {{/if}}
-        </div>
-     
-      <div class="col-lg-4">
-              <div class="col-12">
+      {{/each}}
+    {{/if}}
+
+    <div class="col-12">
       <div class="section-title-sm">
-      	<h3>My Profile</h3>
-      </div>
-      </div>
-          <div class="profile-info">
-      		<div class="inner">
-               {{!-- <h4>{{user.firstname user.lastname}}</h4>
-               <small>Bio</small>
-               <p>{{user.bio}}</p>
-               <small>Email</small>
-               <p>{{user.email}}</p>
-                <small>Age</small>
-               <p>{{user.age}}</p>
-                <small>Gender</small>
-               <p>{{user.gender}}</p>
-                <small>Postcode</small>
-               <p>{{user.postcode}}</p> --}}
-               <p><a href="#"> Edit Profile </a> </p>
-              <p><a href="#"> Delete Profile </a> </p>
-     		  </div>
-        </div>
-     
+        <h3>Workouts i'm hosting</h3>
       </div>
     </div>
+    {{#if workouts.length}}
+      {{#each workouts as |workout|}}
+        <div class="my-list-container">
+          <div class="my-list-content">
+            <h5>{{workout.type}}</h5>
+            <h3>{{workout.title}}</h3>
+            <p>
+              {{workout.description}}
+            </p>
+            <h6>{{workout.date}}
+              <span>|</span>
+              {{workout.time}}
+              <span>|</span>
+              {{workout.duration}}min</h6>
+            <div class="event-btn">
+              <a href="/workout/{{workout.id}}">VIEW WORKOUT</a>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    {{/if}}
+  </div>
+
+  <div class="col-lg-4">
+    <div class="col-12">
+      <div class="section-title-sm">
+        <h3>My Profile</h3>
+      </div>
+    </div>
+    <div class="profile-info">
+      <div class="inner">
+        <h4>{{user.firstName}}</h4>
+        <h4>{{user.lastName}}</h4>
+        <small>Bio</small>
+        <p>{{user.bio}}</p>
+        <small>Email</small>
+        <p>{{user.email}}</p>
+        <small>Age</small>
+        <p>{{user.age}}</p>
+        <small>Gender</small>
+        <p>{{user.gender}}</p>
+        <small>Postcode</small>
+        <p>{{user.postcode}}</p>
+        <p><a href="#"> Edit Profile </a> </p>
+        <p><a href="#"> Delete Profile </a> </p>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 <script src="./js/profile.js"></script>

@@ -1,17 +1,15 @@
 const router = require("express").Router();
 const { User, Workout } = require("../models");
 // import withAuth
-const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
-    console.log( req.session.user_id);
+    console.log(req.session.user_id);
     const user = await User.findOne({
-      where: id =  req.session.user_id
-     
+      where: (id = req.session.user_id),
     });
 
-    console.log(user);
+
     const workoutData = await Workout.findAll({
       attribute: ["id", "title"],
       include: [

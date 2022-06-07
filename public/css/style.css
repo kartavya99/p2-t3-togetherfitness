@@ -101,6 +101,22 @@ section {
   background: #f4fbff;
 }
 
+
+.find-btn  {
+  height: 46px;
+  line-height: 44px;
+  float: center;
+  border: 1px solid #dee0e2;
+  border-radius: 6px;
+  text-align: center;
+  color: #7c838b;
+  font-weight: 700;
+  padding: 0 46px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  background-color: #FFF;
+}
+
 .section-title {
   width: 100%;
   float: left;
@@ -117,11 +133,12 @@ section {
 
 .workout-list-container {
   width: 100%;
-  display: -webkit-box;
+  /* display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  display: flex; */
   margin-top: 20px;
   margin-bottom: 30px;
+  display: none;
 }
 
 .workout-list-content {
@@ -387,3 +404,7 @@ overflow: hidden;
   height: 400px;
   background-color: grey;
 } */
+
+.show {
+  display: flex;
+}

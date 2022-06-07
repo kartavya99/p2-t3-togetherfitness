@@ -11,15 +11,21 @@ $(document).ready(function(){
     dropdown: true,
     scrollbar: true
   });
+  getLocation();
+
+ 
 });
 
-var x = document.getElementById("demo");
+
+var x = document.getElementById("warning");
 
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.watchPosition(showPosition);
+    // navigator.geolocation.watchPosition(showPosition);
+    navigator.geolocation.getCurrentPosition(showPosition);
   } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
+    // x.innerHTML = "Geolocation is not supported by this browser. Please the workout filer below";
+
   } 
 }
     
@@ -29,15 +35,16 @@ var userLng;
 function showPosition(position) {
     userLat =  position.coords.latitude;
     userLng =  position.coords.longitude; 
-
-    x.innerHTML="Latitude: " + userLat + 
-    "<br>Longitude: " + userLng;
+    // x.innerHTML="Latitude: " + userLat + 
+    // "<br>Longitude: " + userLng;
     console.log(userLat);
-} 
+    searchClosest();
+} ;
 
 var searchList;
+
 function searchClosest() {
-  var searchLists = document.getElementsByClassName("workout-list-container");
+  var searchLists = $(".workout-list-container");
   console.log(searchLists);
   var ids, gpsList, listId = "";
   console.log(searchLists);
@@ -46,21 +53,24 @@ function searchClosest() {
     listId = document.getElementById(searchLists[i].id);
     gpsList = listId.getAttribute("data-sort");
     gpsList = gpsList.split(",");
-
-    // console.log(userLat);
-    // console.log(userLng);
-    // console.log(gpsList[0]);
-    // console.log(gpsList[1]);
-    
     searchList = distance(userLat, userLng, gpsList[0], gpsList[1], "K"); 
     listId.setAttribute("data-sort", searchList);
   };
-}
+  appendFilterBtn ();
+};
+
+function appendFilterBtn () {
+  $("#filter-workout").append(`
+  <button id="reorder" class="btn find-btn" onclick="reorderList()">Find workouts closest to me</button> 
+`    
+  );
+};
+
 
 function reorderList(){
 var divList = $(".workout-list-container");
 divList.sort(function(a, b) {
-    return parseInt($(b).data("sort")) - parseInt($(a).data("sort"));
+    return parseInt($(a).data("sort")) - parseInt($(b).data("sort"));
 });
 $("#workout-list").html(divList);
 console.log(divList);
@@ -82,4 +92,53 @@ function distance(lat1, lon1, lat2, lon2, unit) {
   if (unit=="K") { dist = dist * 1.609344; }
   if (unit=="N") { dist = dist * 0.8684; }
   return dist;
+}
+
+
+filterSelection("all");
+
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("workout-list-container");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    filterRemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) filterAddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function filterAddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function filterRemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current control button (highlight it)
+var btnContainer = document.getElementById("filter-btn");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
 }

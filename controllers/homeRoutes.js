@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Location, Workout, User } = require("../models");
+const withAuth = require("../utils/auth");
 
 // needs to import withAuth for authentication
 
@@ -57,7 +58,7 @@ router.get("/workout/:id", async (req, res) => {
   }
 });
 
-router.get("/new", (req, res) => {
+router.get("/new", withAuth, (req, res) => {
   res.render("new");
 });
 

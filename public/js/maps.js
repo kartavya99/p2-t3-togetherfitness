@@ -1,6 +1,5 @@
 var map;
 function initMap() {
-  // Get all map canvas with ".maps" and store them to a variable.
   var maps = document.getElementsByClassName("maps");
   
   var ids, gps, mapId = "";
@@ -11,9 +10,6 @@ function initMap() {
     // Get ID of single div
     mapId = document.getElementById(maps[i].id);
 
-    // Get LatLng stored in data attribute. 
-    // !!! Make sure there is no space in data-attribute !!!
-    // !!! and the values are separated with comma !!!
     gps = mapId.getAttribute("data-gps");
 
     // Convert LatLng to an array

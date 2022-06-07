@@ -8,6 +8,8 @@ router.get("/", async (req, res) => {
     const user = await User.findOne({
       where: (id = req.session.user_id),
     });
+
+
     const workoutData = await Workout.findAll({
       attribute: ["id", "title"],
       include: [

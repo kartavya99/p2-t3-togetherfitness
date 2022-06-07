@@ -58,30 +58,6 @@ router.get("/workout/:id", async (req, res) => {
   }
 });
 
-// // new workout route
-router.get("/host", (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect("/host");
-    return;
-  }
-  res.render("login");
-});
-
-// Temp host workout route
-
-router.get("/new", (req, res) => {
-  res.render("new");
-});
-
-// Temp Profile workout route
-// router.get("/profile", (req, res) => {
-//   res.render("profile");
-// });
-
-// Temp Profile workout route
-// router.get("/workout", (req, res) => {
-//   res.render("workout");
-// });
 
 // login route
 router.get("/login", (req, res) => {

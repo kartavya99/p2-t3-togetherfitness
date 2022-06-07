@@ -15,16 +15,15 @@ router.get("/", async (req, res) => {
       ],
     });
 
-    const workout = workoutData.map((workoutData) => {
+    const workouts = workoutData.map((workoutData) => {
       return workoutData.get({ plain: true });
     });
 
     res.render("profile", {
-      workout,
+      workouts,
       logged_in: false,
     });
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });

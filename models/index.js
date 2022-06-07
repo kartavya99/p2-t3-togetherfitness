@@ -1,12 +1,9 @@
 // Import models
+const { attachment } = require("express/lib/response");
 const Location = require("./Location");
 const User = require("./User");
 const Workout = require("./Workout");
-
-// Workouts have many Users
-Workout.hasMany(User, {
-    foreignKey: "user_id",
-});
+const Attendee = require("./Attendee");
 
 // Users have many workouts
 User.hasMany(Workout, {
@@ -19,8 +16,19 @@ Workout.belongsTo(User, {
   onDelete: "cascade",
 });
 
+User.belongsToMany(Workout, {
+  through: Attendee,
+  foreignKey: "user_id",
+});
+
+Workout.belongsToMany(User, {
+  through: Attendee,
+  foreignKey: "workout_id",
+});
+
 module.exports = {
   Location,
   User,
   Workout,
+  Attendee,
 };

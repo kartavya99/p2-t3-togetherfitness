@@ -5,14 +5,12 @@ const { User, Workout } = require("../../models");
 
 // get all the workout
 router.get("/", async (req, res) => {
-  console.log(req.body);
   try {
     const workoutData = await Workout.findAll({
       attribute: ["id", "title", "type", "duration"],
       include: [{ model: User, attribute: ["firstName", "lastName"] }],
     });
     res.status(200).json(workoutData);
-    console.log(workoutData);
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
@@ -37,7 +35,6 @@ router.get("/:id", async (req, res) => {
     }
     res.status(200).json(workoutData);
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });

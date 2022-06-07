@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/kartavya99/team-3#readme",
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.14.3",
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.4",
     "dotenv": "^16.0.1",

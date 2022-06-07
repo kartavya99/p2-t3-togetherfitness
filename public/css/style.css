@@ -129,7 +129,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 43px;
+  padding: 40px;
   background: #fff;
   position: relative;
 }
@@ -157,6 +157,14 @@ section {
 .workout-list-content p {
 max-height: 100px;
 overflow: hidden;
+}
+
+.workout-list-map {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-bottom: 15px;
 }
 
 .event-btn a {
@@ -270,9 +278,11 @@ form button[type="submit"] {
 
 .group-map .map-area {
   width: 100%;
+  width: 100%;
+  height: 400px;
+  background-color: grey;
   margin: 0;
   position: relative;
-  overflow: hidden;
 }
 
 .group-map .map-content {
@@ -296,7 +306,7 @@ form button[type="submit"] {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 43px;
+  padding: 40px;
   background: #fff;
   position: relative;
 }
@@ -371,3 +381,9 @@ overflow: hidden;
   background: #fff;
   position: relative;
 }
+
+/* #map {
+  width: 100%;
+  height: 400px;
+  background-color: grey;
+} */

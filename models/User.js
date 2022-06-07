@@ -49,10 +49,9 @@ User.init(
       allowNull: false,
     },
 
-    user_gender: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: true,
+    gender: {
+        type: DataTypes.STRING,
+        allowNull: false,
     },
 
     age: {
@@ -65,7 +64,7 @@ User.init(
     },
   },
 
-  {
+ {
     hooks: {
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);

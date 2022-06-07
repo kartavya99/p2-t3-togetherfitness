@@ -1,10 +1,12 @@
-    <div class="row">
+<div class="row">
+
+
+
       <div class="col-lg-8">
       <div class="col-12">
       <div class="section-title-sm">
       	<h3>Workout details</h3>
-      </div>
-      </div>
+       </div>
         <div class="workout-container">
          <div class="workout-content">
           <h2>{{workout.title}}</h2>
@@ -17,14 +19,17 @@
             <div class="">
                 <a href="#" class="btn btn-primary">Count me in!</a>          
             </div>
-            <div class="">n
+            <div class="">
                 <a href="#" class="btn btn-secondary">I can't make it anymore</a>          
             </div>
          </div>
 		     </div>
       </div>
+      </div>
+
+
       <div class="col-lg-4">
-          <div class="col-12">
+      <div class="col-12">
       <div class="section-title-sm">
       	<h3>Your Host</h3>
       </div>
@@ -34,19 +39,22 @@
               <p>{{user.bio}}</p> --}}
         </div>
       </div>
-              <div class="col-12">
+      </div>
+      <div class="col-12">
       <div class="section-title-sm">
       	<h3>Location</h3>
       </div>
          <div class="group-map">
-          <figure class="map-area" id="map">
-             {{!-- <img src="/img/map-placeholder.jpg" alt="Map">  --}}
-             </figure>
-          <div class="map-content"> 
+            <div class="map-area maps" id="map" style="height: 400px; Width: 100%;" data-gps="-37.8199669,144.9834493">
+            </div>
+            <div class="map-content"> 
             <h4>{{workout.address}}</h4>
-            <a href="#" class="read-more">View map</a> 
+            <a href="{{workout.url}}" target="_blank" class="read-more">View on Google Maps</a> 
           </div>
         </div>
-       </div>
+      </div>
     </div>
-<script src="./js/workout.js"></script>
+</div>
+
+<script src="../../js/workout.js"></script>
+<script src="../../js/maps.js"></script>

@@ -31,11 +31,9 @@ const newFormHandler = async (event) => {
   }
 };
 
-
 document
   .querySelector('.new-workout-form')
   .addEventListener('submit', newFormHandler);
-
 
 function initialize() {
   var input = document.getElementById("location-find");

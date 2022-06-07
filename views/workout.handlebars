@@ -1,10 +1,12 @@
-    <div class="row">
+<div class="row">
+
+
+
       <div class="col-lg-8">
       <div class="col-12">
       <div class="section-title-sm">
       	<h3>Workout details</h3>
-      </div>
-      </div>
+       </div>
         <div class="workout-container">
          <div class="workout-content">
           <h2>{{workout.title}}</h2>
@@ -23,8 +25,11 @@
          </div>
 		     </div>
       </div>
+      </div>
+
+
       <div class="col-lg-4">
-          <div class="col-12">
+      <div class="col-12">
       <div class="section-title-sm">
       	<h3>Your Host</h3>
       </div>
@@ -34,21 +39,21 @@
               <p>{{user.bio}}</p> --}}
         </div>
       </div>
-              <div class="col-12">
+      </div>
+      <div class="col-12">
       <div class="section-title-sm">
       	<h3>Location</h3>
       </div>
          <div class="group-map">
             <div class="map-area maps" id="map" style="height: 400px; Width: 100%;" data-gps="-37.8199669,144.9834493">
-             </div>
-      
-
-          <div class="map-content"> 
+            </div>
+            <div class="map-content"> 
             <h4>{{workout.address}}</h4>
             <a href="{{workout.url}}" target="_blank" class="read-more">View on Google Maps</a> 
           </div>
         </div>
-        
-       </div>
+      </div>
     </div>
-<script src="./js/workout.js"></script>
+</div>
+
+{{!-- <script src="../js/workout.js"></script> --}}

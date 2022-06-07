@@ -23,9 +23,9 @@ router.post("/", async (req, res) => {
       email: req.body.email,
       password: req.body.password,
       postcode: req.body.postcode,
-      age: req.body.age,
       gender: req.body.gender,
-      bio: req.body.bio,
+      age: req.body.age,
+      bio: req.body.bio
     });
 
     req.session.save(() => {
@@ -87,5 +87,6 @@ router.post("/logout", (req, res) => {
     res.status(404).end();
   }
 });
+
 
 module.exports = router;

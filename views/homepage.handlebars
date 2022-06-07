@@ -1,28 +1,31 @@
   <div class="row justify-content-center">
       <div class="col-lg-8 col-md-10 text-center">
-      <div class="section-title">
+      <div class="section-title" id="filter-workout">
       	<h2>Find a local work group</h2>
         <p>Orci varius natoque penatibus et magnis dis turient montes nascetur ridiculus mus. Cras eleifend tellus sed congue ectetur velit turpis faucibus odio eget penatibus et magnis dis.</p>
       </div>
-      <button onclick="getLocation()">Get Location</button>
-      <button id="searchTest" onclick="searchClosest()">Check Distance</button>
- <button id="reorder" onclick="reorderList()">Reorder</button>
-
-<p id="demo"></p>
+      {{!-- <p id="warning"></p> --}}
+              
       <h5>Filter by workout</h5>
-      <div class="filter-btn">
-              <a href="#">Workout 1</a>
-              <a href="#">Workout 2</a>
-              <a href="#">Workout 3</a>
-              <a href="#">Workout 4</a>
-      </div>
+ <div id="filter-btn">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('Run')"> Run</button>
+  <button class="btn" onclick="filterSelection('Walk')"> Walk</button>
+  <button class="btn" onclick="filterSelection('Cycle')"> Cycle</button>
+  <button class="btn" onclick="filterSelection('Weights')"> Weights</button>
+  <button class="btn" onclick="filterSelection('HIIT')"> HIIT</button>
+  <button class="btn" onclick="filterSelection('Yoga')"> Yoga</button>
+  <button class="btn" onclick="filterSelection('Pilates')"> Pilates</button>
+  <button class="btn" onclick="filterSelection('Other')"> Other</button>
+</div>
+
     </div>
     </div>
     <div class="row">
       <div class="col-12 column" id="workout-list">
       {{#each workout as |workout| }}
       
-        <div class="workout-list-container" id="workout{{workout.id}}" data-sort="{{workout.lng}},{{workout.lat}}">
+        <div class="workout-list-container {{workout.type}}" id="workout{{workout.id}}" data-sort="{{workout.lng}},{{workout.lat}}" data-selected="{{workout.type}}">
            <div class="col-lg-8">
          <div class="workout-list-content">
            <h5>{{workout.type}}</h5>

@@ -45,8 +45,8 @@ User.init(
     },
 
     postcode: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
 
     gender: {
@@ -55,12 +55,12 @@ User.init(
     },
 
     age: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
 
     bio: {
-        type: DataTypes.STRING,
+      type: DataTypes.STRING,
     },
   },
 

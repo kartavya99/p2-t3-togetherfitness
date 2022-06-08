@@ -42,8 +42,8 @@ function initialize() {
 
     google.maps.event.addListener(autocomplete, "place_changed", function () {
         var place = autocomplete.getPlace();
-        console.log(place);
-        console.log(place.address_components);
+        // console.log(place);
+        // console.log(place.address_components);
         document.getElementById("location-name").value = place.name;
         // document.getElementById("cityPost").value = place.address_components.5.long_name;
         document.getElementById("location-address").value = place.formatted_address;

@@ -14,17 +14,12 @@
          <h4><span>{{workout.date}}</span> <span>{{workout.time}}</span></h4>
            <h4><span>{{workout.duration}}</span> Minutes</h4>
            <p>{{workout.description}}</p>
-            <h3>Attendees:</h3>
+            <h4>Join the workout</h4>
                 <div class="workout-btn">
+                  <h5 class="attend-comment" id="attend-comment" >You are registered.</h5>
                  <button class="btn" id="attend-button" data-id="{{workout.id}}" data-source="{{user.id}}">COUNT ME IN!</button>
             </div>
-            {{!-- <div class="">
-                <a href="#" class="btn btn-primary" id="attend-button" data-id="{{workout.id}}" data-source="{{user.id}}">Count me in!</a>          
-            </div> --}}
-            {{!-- <div class="">
-                <a href="#" class="btn btn-secondary">I can't make it anymore</a>          
-            </div> --}}
-         </div>
+          </div>
 		     </div>
       </div>
       </div>
@@ -37,7 +32,7 @@
       </div>
         <div class="host-info">
         <div class="inner">
-           <h4>{{workout.user.firstName}} {{workout.user.lastName}} {{user.id}}</h4>
+           <h4>{{workout.user.firstName}} {{workout.user.lastName}}</h4>
            <p>{{workout.user.bio}}</p>
         </div>
       </div>

@@ -102,6 +102,6 @@ Github: https://github.com/maaadewale <br />
 
 ## Links
 
-Deployed Application: <br />
+Deployed Application: https://together-fitness.herokuapp.com/ <br />
 Application Repository: https://github.com/kartavya99/p2-t3-togetherfitness <br />
 Presentation: https://docs.google.com/presentation/d/18B7f3crJ3tgWrMlM5-ON6-VvWfQZBoass0P82tIiGZE/edit?usp=sharing <br />

@@ -30,5 +30,5 @@ module.exports = {
   Location,
   User,
   Workout,
-  Attendee,
+  Attendee
 };

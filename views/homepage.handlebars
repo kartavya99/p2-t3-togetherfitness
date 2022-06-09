@@ -4,20 +4,22 @@
       	<h2>Find a local work group</h2>
         <p>Orci varius natoque penatibus et magnis dis turient montes nascetur ridiculus mus. Cras eleifend tellus sed congue ectetur velit turpis faucibus odio eget penatibus et magnis dis.</p>
       </div>
+
       {{!-- <p id="warning"></p> --}}
-              
+       <div class="section-sub">       
       <h5>Filter by workout</h5>
- <div id="filter-btn">
-  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-  <button class="btn" onclick="filterSelection('Run')"> Run</button>
-  <button class="btn" onclick="filterSelection('Walk')"> Walk</button>
-  <button class="btn" onclick="filterSelection('Cycle')"> Cycle</button>
-  <button class="btn" onclick="filterSelection('Weights')"> Weights</button>
-  <button class="btn" onclick="filterSelection('HIIT')"> HIIT</button>
-  <button class="btn" onclick="filterSelection('Yoga')"> Yoga</button>
-  <button class="btn" onclick="filterSelection('Pilates')"> Pilates</button>
-  <button class="btn" onclick="filterSelection('Other')"> Other</button>
-</div>
+       </div>
+ <div id="filter-btn" class="filter-menu gap-2">
+  <button class="btn workout-options" onclick="filterSelection('Run')"> Run</button>
+  <button class="btn workout-options" onclick="filterSelection('Walk')"> Walk</button>
+  <button class="btn workout-options" onclick="filterSelection('Cycle')"> Cycle</button>
+  <button class="btn workout-options" onclick="filterSelection('Weights')"> Weights</button>
+  <button class="btn workout-options" onclick="filterSelection('HIIT')"> HIIT</button>
+  <button class="btn workout-options" onclick="filterSelection('Yoga')"> Yoga</button>
+  <button class="btn workout-options" onclick="filterSelection('Pilates')"> Pilates</button>
+  <button class="btn workout-options" onclick="filterSelection('Other')"> Other</button>
+ <button class="btn active col-12" onclick="filterSelection('all')"> Show all</button>
+</div>  
 
     </div>
     </div>

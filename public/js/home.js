@@ -1,61 +1,3 @@
-$(document).ready(function(){
-  getLocation();
-});
-
-var x = document.getElementById("warning");
-
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else { 
-
-  } 
-}
-    
-var userLat;
-var userLng;
-
-function showPosition(position) {
-    userLat =  position.coords.latitude;
-    userLng =  position.coords.longitude; 
-    searchClosest();
-} ;
-
-var searchList;
-
-function searchClosest() {
-  var searchLists = $(".workout-list-container");
-
-  var ids, gpsList, listId = "";
-
-  for(var i=0; i<searchLists.length; i++) {
-    listId = document.getElementById(searchLists[i].id);
-    gpsList = listId.getAttribute("data-sort");
-    gpsList = gpsList.split(",");
-    searchList = distance(userLat, userLng, gpsList[0], gpsList[1], "K"); 
-    listId.setAttribute("data-sort", searchList);
-  };
-  appendFilterBtn ();
-};
-
-function appendFilterBtn () {
-  $("#filter-workout").append(`
-  <button id="reorder" class="btn find-btn" onclick="reorderList()">Find workouts closest to me</button> 
-`    
-  );
-};
-
-
-function reorderList(){
-var divList = $(".workout-list-container");
-divList.sort(function(a, b) {
-    return parseInt($(a).data("sort")) - parseInt($(b).data("sort"));
-});
-$("#workout-list").html(divList);
-console.log(divList);
-};
-
-
 function distance(lat1, lon1, lat2, lon2, unit) {
   var radlat1 = Math.PI * lat1/180;
   var radlat2 = Math.PI * lat2/180;
@@ -68,22 +10,60 @@ function distance(lat1, lon1, lat2, lon2, unit) {
   dist = Math.acos(dist);
   dist = dist * 180/Math.PI;
   dist = dist * 60 * 1.1515;
-  if (unit=="K") { dist = dist * 1.609344; }
-  if (unit=="N") { dist = dist * 0.8684; }
+  if (unit==="K") {
+    dist = dist * 1.609344;
+  }
+  if (unit==="N") {
+    dist = dist * 0.8684;
+  }
   return dist;
 }
 
+function reorderList() {
+  var divList = $(".workout-list-container");
+  divList.sort(function(a, b) {
+    return parseInt($(a).data("sort")) - parseInt($(b).data("sort"));
+  });
+  $("#workout-list").html(divList);
+}
 
+function appendFilterBtn() {
+  $("#filter-workout").append(`
+  <button id="reorder" class="btn find-btn" onclick="reorderList()">Find workouts closest to me</button> 
+`);
+}
 
-filterSelection("all");
+var userLat;
+var userLng;
+var searchList;
+function searchClosest() {
+  var searchLists = $(".workout-list-container");
 
-function filterSelection(c) {
-  var x, i;
-  x = document.getElementsByClassName("workout-list-container");
-  if (c == "all") c = "";
-  for (i = 0; i < x.length; i++) {
-    filterRemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) filterAddClass(x[i], "show");
+  var gpsList, listId = "";
+
+  for(var i=0; i<searchLists.length; i++) {
+    listId = document.getElementById(searchLists[i].id);
+    gpsList = listId.getAttribute("data-sort");
+    gpsList = gpsList.split(",");
+    searchList = distance(userLat, userLng, gpsList[0], gpsList[1], "K");
+    listId.setAttribute("data-sort", searchList);
+  }
+  appendFilterBtn ();
+}
+
+function showPosition(position) {
+  userLat = position.coords.latitude;
+  userLng = position.coords.longitude;
+  searchClosest();
+}
+
+// var x = document.getElementById("warning");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    console.log("GPS not enabled");
   }
 }
 
@@ -93,7 +73,7 @@ function filterAddClass(element, name) {
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");
   for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {
+    if (arr1.indexOf(arr2[i]) === -1) {
       element.className += " " + arr2[i];
     }
   }
@@ -122,3 +102,21 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
+
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("workout-list-container");
+  if (c === "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    filterRemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) {
+      filterAddClass(x[i], "show");
+    }
+  }
+}
+
+$(document).ready(function(){
+  getLocation();
+});
+
+filterSelection("all");

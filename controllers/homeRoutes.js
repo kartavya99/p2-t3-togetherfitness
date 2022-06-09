@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Location, Workout, User } = require("../models");
+const { Attendee, Workout, User } = require("../models");
 const withAuth = require("../utils/auth");
 
 // needs to import withAuth for authentication
@@ -21,7 +21,6 @@ router.get("/", async (req, res) => {
     const workout = workoutData.map((workoutData) =>
       workoutData.get({ plain: true })
     );
-
     res.render("homepage", {
       workout,
       logged_in: req.session.logged_in,
@@ -36,21 +35,27 @@ router.get("/", async (req, res) => {
 router.get("/workout/:id", async (req, res) => {
   try {
     console.log(req.body);
+    const user = await User.findOne({
+      where: (id = req.session.user_id),
+    });
     const workoutData = await Workout.findByPk(req.params.id, {
       include: {
         model: User,
-        attributes: ["id", "firstName", "lastName"],
+        attributes: ["id", "firstName", "lastName", "bio"],
       },
     });
 
     //serialize data so the template can read it
     const workout = workoutData.get({ plain: true });
-    console.log(workout);
-
+    console.log(user?.dataValues);
+    console.log(req.session.user_id);
+    console.log(user.id);
     res.render("workout", {
       workout,
       logged_in: req.session.logged_in,
       firstName: req.session.firstName,
+      user: user?.dataValues,
+   
     });
   } catch (err) {
     console.log(err);
@@ -58,8 +63,14 @@ router.get("/workout/:id", async (req, res) => {
   }
 });
 
-router.get("/new", withAuth, (req, res) => {
-  res.render("new");
+router.get("/new", (req, res) => {
+  if (req.session.logged_in) {
+    res.render("new", {
+      logged_in: true
+    });
+    return;
+  }
+  res.render("login");
 });
 
 // login route

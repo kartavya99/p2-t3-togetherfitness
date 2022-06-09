@@ -165,6 +165,12 @@ section {
   width: 100%;
   position: relative;
   margin-bottom: 20px;
+  
+}
+
+.section-sub h5 {
+  font-size: 22px;
+  color: #5e5f5f;
 }
 
 .workout-list-container {
@@ -552,7 +558,7 @@ overflow: hidden;
 }
 
 .workout-options {
-  /* width: 22%; */
+  width: 24%;
 }
 
 .filter-menu .active {

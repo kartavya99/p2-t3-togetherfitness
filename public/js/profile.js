@@ -19,3 +19,10 @@ const delButtonHandler = async (event) => {
 document
   .querySelector("#delete-button")
   .addEventListener("click", delButtonHandler);
+
+
+// $(document).ready(function() {
+//     $("#delete-button").click(function(){
+//       delButtonHandler();
+//     }); 
+// });

@@ -3,7 +3,12 @@ const { Attendee } = require("../../models");
 
 router.post("/", async (req, res) => {
   try {
-    const attendeeData = await Attendee.create(req.body);
+    const attendeeData = await Attendee.create({
+      workout_id: req.body.userId,
+      user_id: req.body.workoutId
+   });
+
+
     res.status(200).json(attendeeData);
   } catch (err) {
     console.log(err);
@@ -11,19 +16,31 @@ router.post("/", async (req, res) => {
   }
 });
 
+
 router.get("/", async (req, res) => {
-  //hardcoded response
-  const user_id = 3;
   try {
-    const attendeeData = await Attendee.findAll({
-      //where: { user_id: req.body.user_id },
-      where: { user_id: user_id }, // this needs to be change as it is hardcoded from line 17
-    });
-    res.status(200).json(attendeeData);
+    const userData = await Attendee.findAll();
+    res.status(200).json(userData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+
+
+// router.get("/", async (req, res) => {
+//   //hardcoded response
+//   const user_id = 3;
+//   try {
+//     const attendeeData = await Attendee.findAll({
+//       //where: { user_id: req.body.user_id },
+//       where: { user_id: user_id }, // this needs to be change as it is hardcoded from line 17
+//     });
+//     res.status(200).json(attendeeData);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 router.delete("/:id", async (req, res) => {
   try {

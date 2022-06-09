@@ -5,22 +5,22 @@
         <h3>Workouts i'm joining</h3>
       </div>
     </div>
-    {{#if workouts.length}}
-      {{#each workouts as |workout|}}
+    {{#if attendWorkData.length}}
+      {{#each attendWorkData as |attendance|}}
         <div class="my-list-container">
           <div class="my-list-content">
-            <h5>{{workout.type}}</h5>
-            <h3>{{workout.title}}</h3>
+            <h5>{{attendance.type}}</h5>
+            <h3>{{attendance.title}}</h3>
+            <h6>{{attendance.date}}
+              <span>|</span>
+              {{attendance.time}}
+              <span>|</span>
+              {{attendance.duration}}min</h6>
             <p>
-              {{workout.description}}
+              {{attendance.description}}
             </p>
-            <h6>{{workout.date}}
-              <span>|</span>
-              {{workout.time}}
-              <span>|</span>
-              {{workout.duration}}min</h6>
             <div class="event-btn">
-              <a href="/workout/{{workout.id}}">VIEW WORKOUT</a>
+              <a href="/workout/{{attendance.id}}">VIEW WORKOUT</a>
             </div>
           </div>
         </div>
@@ -32,24 +32,25 @@
         <h3>Workouts i'm hosting</h3>
       </div>
     </div>
-    {{#if workouts.length}}
-      {{#each workouts as |workout|}}
+    {{#if hostWorkouts.length}}
+      {{#each hostWorkouts as |hosting|}}
         <div class="my-list-container">
           <div class="my-list-content">
-            <h5>{{workout.type}}</h5>
-            <h3>{{workout.title}}</h3>
+            <h5>{{hosting.type}}</h5>
+            <h3>{{hosting.title}}</h3>
+            <h6>{{hosting.date}}
+              <span>|</span>
+              {{hosting.time}}
+              <span>|</span>
+              {{hosting.duration}}min</h6>
             <p>
-              {{workout.description}}
+              {{hosting.description}}
             </p>
-            <h6>{{workout.date}}
-              <span>|</span>
-              {{workout.time}}
-              <span>|</span>
-              {{workout.duration}}min</h6>
             <div class="event-btn">
-              <a href="/workout/{{workout.id}}">VIEW WORKOUT</a>
+                <a href="/workout/{{hosting.id}}" role="button">VIEW WORKOUT</a>
+               <button class="btn" id="delete-button" data-id="{{hosting.id}}">DELETE MY WORKOUT</button>
             </div>
-          </div>
+           </div>
         </div>
       {{/each}}
     {{/if}}
@@ -63,8 +64,7 @@
     </div>
     <div class="profile-info">
       <div class="inner">
-        <h4>{{user.firstName}}</h4>
-        <h4>{{user.lastName}}</h4>
+        <h4>{{user.firstName}} {{user.lastName}}</h4>
         <small>Bio</small>
         <p>{{user.bio}}</p>
         <small>Email</small>
@@ -75,8 +75,8 @@
         <p>{{user.gender}}</p>
         <small>Postcode</small>
         <p>{{user.postcode}}</p>
-        <p><a href="#"> Edit Profile </a> </p>
-        <p><a href="#"> Delete Profile </a> </p>
+        {{!-- <p><a href="#"> Edit Profile </a> </p>
+        <p><a href="#"> Delete Profile </a> </p> --}}
       </div>
     </div>
 

@@ -18,59 +18,58 @@ Workout.init(
     },
 
     type: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
 
     size: {
       type: DataTypes.INTEGER,
       allowNull: false,
-  },
-
-    date: {
-        type: DataTypes.DATEONLY,
-        allowNull: false,
-        defaultValue: DataTypes.NOW,
     },
 
-   time: {
-      type: DataTypes.TIME,
+    date: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+
+    time: {
+      type: DataTypes.STRING,
       allowNull: false
-  },
+    },
 
     duration: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
 
     location: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
 
     address: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
 
     lat: {
       type: DataTypes.STRING,
       allowNull: false,
-  },
+    },
 
-  lng: {
+    lng: {
       type: DataTypes.STRING,
       allowNull: false,
-  },
+    },
 
-  url: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
+    url: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
 
     description: {
-        type: DataTypes.TEXT, 
-        allowNull: false,
+      type: DataTypes.TEXT,
+      allowNull: false,
     },
 
     user_id: {

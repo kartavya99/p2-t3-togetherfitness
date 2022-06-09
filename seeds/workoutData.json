@@ -2,8 +2,8 @@
     {
         "title": "Run Wattle Park ",
         "type": "Run",
-        "date": "2022-06-23",
-        "time": "08:00",
+        "date": "Saturday, 18 June, 2022",
+        "time": "12:00 PM",
         "duration": 30,
         "size": 12,
         "location": "Wattle Park Cricket Ground",
@@ -18,8 +18,8 @@
     {
         "title": "Cycle Melbourne Cricket Ground",
         "type": "Cycle",
-        "date": "2022-06-22",
-        "time": "12:00",
+        "date": "Saturday, 18 June, 2022",
+        "time": "12:00 PM",
         "duration": 60,
         "size": 4,
         "location": "Melbourne Cricket Ground",
@@ -35,8 +35,8 @@
     {
         "title": "HIIT Workout at the beach",
         "type": "HIIT",
-        "date": "2022-06-22",
-        "time": "12:00",
+        "date": "Saturday, 18 June, 2022",
+        "time": "1:00 PM",
         "duration": 60,
         "size": 4,
         "location": "St Kilda beach",
@@ -51,8 +51,8 @@
     {
         "title": "Run the G",
         "type": "Run",
-        "date": "2022-06-22",
-        "time": "12:00",
+        "date": "Saturday, 18 June, 2022",
+        "time": "2:00 PM",
         "duration": 60,
         "size": 4,
         "location": "Melbourne Cricket Ground",

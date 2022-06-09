@@ -7,7 +7,7 @@
         "postcode": 3000,
         "gender": "Male",
         "age": 38,
-        "bio": "Hello1"
+        "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla urna, scelerisque ut aliquet nec"
     },
 
     {
@@ -18,7 +18,7 @@
         "postcode": 3001,
         "gender": "Male",
         "age": 38,
-        "bio": "Hello2"
+        "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla urna, scelerisque ut aliquet nec"
     },
 
     {
@@ -29,7 +29,7 @@
         "postcode": 3002,
         "gender": "Male",
         "age": 38,
-        "bio": "Hello3"
+        "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla urna, scelerisque ut aliquet nec"
     },
 
     {
@@ -40,7 +40,7 @@
         "postcode": 3003,
         "gender": "Male",
         "age": 38,
-        "bio": "Hello4"
+        "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla urna, scelerisque ut aliquet nec"
     },
 
     {
@@ -51,6 +51,6 @@
         "postcode": 3004,
         "gender": "Male",
         "age": 38,
-        "bio": "Hello5"
+        "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla urna, scelerisque ut aliquet nec"
     }
 ]

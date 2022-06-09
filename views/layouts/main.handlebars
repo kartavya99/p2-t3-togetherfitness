@@ -38,12 +38,11 @@
         <li class="nav-item">
           <a class="nav-link" href="/new">Host a workout</a>
         </li>
+         {{#if logged_in}}
         <li class="nav-item">
           <a class="nav-link" href="/profile">My Workouts</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/workout/1">Single workout TEST</a>
-        </li>
+         {{/if}}
       </ul>
       {{#if logged_in}}
       <div class="d-flex gap-2">

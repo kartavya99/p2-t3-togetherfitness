@@ -94,6 +94,7 @@ h6 span {
   border-color: #3fa4dd;
   text-transform: uppercase;
   font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .btn-primary:hover {
@@ -107,6 +108,7 @@ h6 span {
   color: #3fa4dd;
   text-transform: uppercase;
   font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .btn-outline-primary:hover {
@@ -139,9 +141,10 @@ section {
   margin-top: 20px;
   text-transform: uppercase;
   background-color: #3fa4dd;
+  letter-spacing: 1px;
 }
 
-.find-bt:hover {
+.find-btn:hover {
   border-color: #1874b2;
   color: #ffffff;
   background: #1874b2;
@@ -149,14 +152,12 @@ section {
 
 .section-title {
   width: 100%;
-  float: left;
   position: relative;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 .section-title-sm {
   width: 100%;
-  float: left;
   position: relative;
   margin-bottom: 30px;
 }
@@ -165,7 +166,14 @@ section {
   width: 100%;
   position: relative;
   margin-bottom: 20px;
-  
+}  
+
+
+.section-button {
+  width: 100%;
+  position: relative;
+  margin-bottom: 40px;
+  min-height: 54px;
 }
 
 .section-sub h5 {
@@ -245,7 +253,8 @@ overflow: hidden;
   font-weight: 700;
   padding: 0 46px;
   margin-top: 10px;
-  text-transform: uppercase
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .event-btn a:hover {
@@ -274,6 +283,7 @@ overflow: hidden;
   padding: 0 46px;
   margin-top: 10px;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .event-btn button:hover {
@@ -304,6 +314,7 @@ overflow: hidden;
   text-transform: uppercase;
   background: #3fa4dd;
   border-color: #3fa4dd;
+  letter-spacing: 1px;
 }
 
 .workout-btn button:hover {
@@ -361,6 +372,7 @@ form button[type="submit"] {
   transition: .25s ease-in-out;
   border: none;
   cursor: pointer;
+  letter-spacing: 1px;
 }
 
 
@@ -407,7 +419,6 @@ form button[type="submit"] {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    margin-bottom: 15px;
 }
 
 .group-map .map-area {
@@ -545,6 +556,7 @@ overflow: hidden;
 
 .filter-menu button {
   height: 46px;
+  letter-spacing: 1px;
   line-height: 44px;
   border: 1px solid #dee0e2;
   border-radius: 6px;
@@ -556,6 +568,12 @@ overflow: hidden;
   text-transform: uppercase;
   background-color: #FFF;
 }
+.filter-menu button:hover {
+  border-color: #1874b2;
+  color: #ffffff;
+  background: #1874b2;
+}
+
 
 .workout-options {
   width: 24%;

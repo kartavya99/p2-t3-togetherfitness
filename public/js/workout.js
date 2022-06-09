@@ -16,6 +16,7 @@ const attendButtonHandler = async (event) => {
       // document.location.replace("/profile");
       // alert("Button works");
       $('#attend-button').addClass('hide');
+      $('#attend-comment').addClass('show');
     } else {
       alert("Failed create");
     }

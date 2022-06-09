@@ -150,6 +150,19 @@ section {
   background: #1874b2;
 }
 
+.find-btn:active {
+  border-color: #67bef0;
+  color: #ffffff;
+  background: #3fa4dd;
+}
+
+.find-btn:focus {
+  border: 1px solid #67bef0;
+  color: #ffffff;
+  background-color: #3fa4dd;
+}
+
+
 .section-title {
   width: 100%;
   position: relative;
@@ -509,6 +522,18 @@ overflow: hidden;
   margin-bottom: 20px;
 }
 
+.btn:focus {
+  border: 1px solid #67bef0;
+  color: #ffffff;
+  background-color: #3fa4dd;
+}
+
+button:focus {
+  border: 1px solid #67bef0;
+  color: #ffffff;
+  background-color: #3fa4dd;
+}
+
 
 .workout-container {
   width: 100%;
@@ -535,7 +560,11 @@ overflow: hidden;
 } */
 
 .show {
-  display: flex;
+  display: flex!important;
+}
+
+.attend-comment {
+  display: none;
 }
 
 .hide {

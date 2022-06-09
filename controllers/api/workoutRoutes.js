@@ -17,25 +17,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// // get workout by id
-// router.get("/test/:id", async (req, res) => {
-//   console.log(req.params);
-//   try {
-//     const workoutData = await Workout.findAll({
-//       where: { id: req.params.id }
-//     });
-//     console.log("hello");
-//     if (!workoutData) {
-//       res
-//         .status(404)
-//         .json({ message: `No workout with this id ${req.params.id}` });
-//       return;
-//     }
-//     res.status(200).json(workoutData);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 
 router.get("/:id", async (req, res) => {
